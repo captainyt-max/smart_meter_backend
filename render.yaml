@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: django-meter-app
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn smart_meter.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: smart_meter.settings
