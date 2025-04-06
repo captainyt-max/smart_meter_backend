@@ -1,4 +1,8 @@
 from django.db import models
+import time
+
+def get_timestamp_millis():
+    return int(time.time())
 
 # Create your models here.
 
@@ -8,6 +12,7 @@ class CurrentReadings(models.Model):
     current = models.FloatField()
     power = models.FloatField()
     created_at = models.DateTimeField(auto_now_add=True)
+    timestamp = models.BigIntegerField(default=get_timestamp_millis)
 
     def save(self, *args, **kwargs):
         # Only keep one row at a time

@@ -56,4 +56,5 @@ def update_current_reading(request):
         'current': reading.current,
         'power': reading.power,
         'created_at': reading.created_at,
+        'timestamp' : reading.timestamp,
     })

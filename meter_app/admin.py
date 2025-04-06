@@ -5,4 +5,4 @@ from .models import CurrentReadings
 
 @admin.register(CurrentReadings)
 class CurrentReadingsAdmin(admin.ModelAdmin):
-    list_display = ('voltage', 'current', 'power', 'created_at')  # Show these in list
+    list_display = ('voltage', 'current', 'power', 'created_at', 'timestamp')  # Show these in list
