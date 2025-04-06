@@ -55,6 +55,5 @@ def update_current_reading(request):
         'voltage': reading.voltage,
         'current': reading.current,
         'power': reading.power,
-        'date': reading.date,
-        'time': reading.time,
+        'created_at': reading.created_at,
     })

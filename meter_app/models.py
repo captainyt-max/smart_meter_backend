@@ -7,8 +7,7 @@ class CurrentReadings(models.Model):
     voltage = models.FloatField()
     current = models.FloatField()
     power = models.FloatField()
-    date = models.DateField(auto_now_add=True)
-    time = models.TimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
         # Only keep one row at a time
