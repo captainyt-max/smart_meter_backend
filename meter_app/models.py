@@ -1,8 +1,11 @@
 from django.db import models
 import time
+from datetime import datetime, timedelta
+from django.utils import timezone
 
 def get_timestamp_millis():
-    return int(time.time())
+    ist_now = timezone.localtime(timezone.now())  # returns IST if TIME_ZONE is set
+    return int(ist_now.timestamp())
 
 # Create your models here.
 
