@@ -1,0 +1,32 @@
+name: Daily Hourly Reset
+
+on:
+  schedule:
+    - cron: '0 18 * * *'  # Midnight IST (18:00 UTC)
+  workflow_dispatch:
+
+jobs:
+  call-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Try Reset API with Retry
+        run: |
+          MAX_RETRIES=5
+          RETRY_DELAY=15  # seconds
+
+          for ((i=1; i<=MAX_RETRIES; i++))
+          do
+            echo "Attempt $i to call reset API..."
+            response=$(curl -s -o /dev/null -w "%{http_code}" "https://smart-meter-backend-s61l.onrender.com/smartmeter/reset-hourly/")
+
+            if [ "$response" -eq 200 ]; then
+              echo "✅ Successfully called reset API!"
+              exit 0
+            else
+              echo "❌ Failed (HTTP $response). Retrying in $RETRY_DELAY seconds..."
+              sleep $RETRY_DELAY
+            fi
+          done
+
+          echo "🚨 All attempts failed!"
+          exit 1

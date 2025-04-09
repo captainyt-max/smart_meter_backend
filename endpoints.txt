@@ -1,0 +1,11 @@
+<--  Note : Change localhost address with actual server address in case of production -->
+
+get current values(voltage, current, power) => http://127.0.0.1:8000/smartmeter/currentvalue
+update current values => https://127.0.0.1:8000/smartmeter/updatevalues?voltage=230&current=1.2&power=345
+update hourly usage => http://127.0.0.1:8000/smartmeter/update-hourly-usage?hour=16&usage=90
+get today usage =>http://127.0.0.1:8000/smartmeter/get-today-usage/
+get today all hourly usage => http://127.0.0.1:8000/smartmeter/get-today-history/
+get monthly history (all dates usage) => http://127.0.0.1:8000/smartmeter/update-hourly-usage/?hour=16&usage=90
+get total monthly usage => http://127.0.0.1:8000/smartmeter/get-monthly-usage/
+get device status => http://127.0.0.1:8000/smartmeter/device-status/
+reset hourly usage => http://127.0.0.1:8000/smartmeter/reset-hourly/

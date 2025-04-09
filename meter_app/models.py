@@ -36,3 +36,11 @@ class HourlyUsage(models.Model):
 
     def __str__(self):
         return f"{self.hour:02d}:00 - {self.usage} kWh"
+    
+class DailyUsage(models.Model):
+    date = models.DateField(unique=True)
+    usage = models.FloatField(default=0.0)
+    last_updated = models.TimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.date} - {self.usage} kWh"
