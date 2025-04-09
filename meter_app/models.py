@@ -25,3 +25,14 @@ class CurrentReadings(models.Model):
 
     def __str__(self):
         return f"{self.voltage}V | {self.current}A | {self.power}W"
+    
+class HourlyUsage(models.Model):
+    hour = models.IntegerField(
+    choices=[(i, f"{i:02d}:00") for i in range(24)],
+    unique=True
+    )
+    usage = models.FloatField(default=0.0)
+    last_updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.hour:02d}:00 - {self.usage} kWh"
