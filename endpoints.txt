@@ -1,11 +1,60 @@
-<--  Note : Change localhost address with actual server address in case of production -->
+<--  Localhost Endpoints -->
+-----------------------------
 
-get current values(voltage, current, power) => http://127.0.0.1:8000/smartmeter/currentvalue
-update current values => https://127.0.0.1:8000/smartmeter/updatevalues?voltage=230&current=1.2&power=345
-update hourly usage => http://127.0.0.1:8000/smartmeter/update-hourly-usage?hour=16&usage=90
-get today usage =>http://127.0.0.1:8000/smartmeter/get-today-usage/
-get today all hourly usage => http://127.0.0.1:8000/smartmeter/get-today-history/
-get monthly history (all dates usage) => http://127.0.0.1:8000/smartmeter/update-hourly-usage/?hour=16&usage=90
-get total monthly usage => http://127.0.0.1:8000/smartmeter/get-monthly-usage/
-get device status => http://127.0.0.1:8000/smartmeter/device-status/
-reset hourly usage => http://127.0.0.1:8000/smartmeter/reset-hourly/
+✅ Get Current Values (Voltage, Current, Power)
+http://127.0.0.1:8000/smartmeter/currentvalue/
+
+🔄 Update Current Values
+http://127.0.0.1:8000/smartmeter/updatevalues?voltage=230&current=1.2&power=345
+
+⏰ Update Hourly Usage
+http://127.0.0.1:8000/smartmeter/update-hourly-usage?hour=16&usage=90
+
+📊 Get Today's Total Usage
+http://127.0.0.1:8000/smartmeter/get-today-usage/
+
+🕒 Get Today's Hourly Usage History
+http://127.0.0.1:8000/smartmeter/get-today-history/
+
+📅 Get Monthly Usage History (All Daily Records)
+http://127.0.0.1:8000/smartmeter/get-monthly-history/
+
+📈 Get Total Monthly Usage
+http://127.0.0.1:8000/smartmeter/get-monthly-usage/
+
+🟢 Get Device Status (Online/Offline)
+http://127.0.0.1:8000/smartmeter/device-status/
+
+🧹 Reset Hourly Usage (Manual Trigger)
+http://127.0.0.1:8000/smartmeter/reset-hourly/
+
+--------------------------------------------------------------------------------------------------------------
+
+<-- Hosted Backend Endpoints -->
+--------------------------
+✅ Get current values (voltage, current, power)
+https://smart-meter-backend-s61l.onrender.com/smartmeter/currentvalue/
+
+🔄 Update current values
+https://smart-meter-backend-s61l.onrender.com/smartmeter/updatevalues?voltage=230&current=1.2&power=345
+
+⏰ Update hourly usage
+https://smart-meter-backend-s61l.onrender.com/smartmeter/update-hourly-usage?hour=16&usage=90
+
+📊 Get today’s total usage
+https://smart-meter-backend-s61l.onrender.com/smartmeter/get-today-usage/
+
+🕒 Get today’s hourly usage history
+https://smart-meter-backend-s61l.onrender.com/smartmeter/get-today-history/
+
+📅 Get monthly usage history (all daily entries)
+https://smart-meter-backend-s61l.onrender.com/smartmeter/get-monthly-history/
+
+📈 Get total monthly usage
+https://smart-meter-backend-s61l.onrender.com/smartmeter/get-monthly-usage/
+
+🟢 Get device status (online/offline)
+https://smart-meter-backend-s61l.onrender.com/smartmeter/device-status/
+
+🧹 Reset hourly usage (secure)
+https://smart-meter-backend-s61l.onrender.com/smartmeter/reset-hourly/
