@@ -114,9 +114,10 @@ def get_today_usage(request):
         })
     except DailyUsage.DoesNotExist:
         return Response({
-            'error': 'No usage data available for today',
-            'date': str(today)
-        }, status=status.HTTP_404_NOT_FOUND)
+            'date': str(today),
+            'usage': 0.0,
+            'last_updated' : "N/A"
+        })
     
 @api_view(['GET'])
 def get_monthly_history(request):
